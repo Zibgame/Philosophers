@@ -9,6 +9,7 @@ Projet du cursus 42 basé sur le célèbre Dining Philosophers Problem. Simulati
 - Messages synchronisés et horodatés  
 
 ## 🛠️ Compilation
+``bash
 make
 ./philo <nb_philo> <time_to_die> <time_to_eat> <time_to_sleep> [meals]
 
