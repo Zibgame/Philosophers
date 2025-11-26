@@ -19,10 +19,11 @@ make
 Comprendre la concurrence, éviter les race conditions, maîtriser les threads et construire une architecture stable et robuste.
 
 ## 🧩 Exemple
+```bash
 ./philo 5 800 200 200
-
-bash
-Copier le code
+```
 
 ## 📄 Statut
 Projet réalisé dans le cadre du cursus École 42 Le Havre.
+
+Zibgame
