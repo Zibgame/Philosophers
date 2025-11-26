@@ -9,12 +9,11 @@ Projet du cursus 42 basé sur le célèbre Dining Philosophers Problem. Simulati
 - Messages synchronisés et horodatés  
 
 ## 🛠️ Compilation
-``bash
+```bash
 make
 ./philo <nb_philo> <time_to_die> <time_to_eat> <time_to_sleep> [meals]
 
-shell
-Copier le code
+```
 
 ## 📌 Objectifs pédagogiques
 Comprendre la concurrence, éviter les race conditions, maîtriser les threads et construire une architecture stable et robuste.
