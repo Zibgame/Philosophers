@@ -6,7 +6,7 @@
 #    By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/27 22:20:25 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/28 23:39:20 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/29 00:10:23 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.c \
 	  struct.c \
+	  check.c \
 	  ft_atol.c \
 	  error.c
 

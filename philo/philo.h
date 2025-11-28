@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 23:55:25 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/29 00:12:57 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_args
 /* == Parsing == */
 
 t_args	create_args_struct(int argc, char **argv);
+int		check_args(int ac, char **av);
 
 /* == Other == */
 
