@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 22:20:00 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 23:54:20 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/11/20 22:27:12 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/11/28 23:35:32 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int argc, char **argv)
+long	ft_atol(char *s)
 {
-	t_args	args;
+	long	result;
+	long	sign;
+	long	digit;
 
-	if (argc <= 4 || argc > 6)
-		return (print_error("Error: wrong number of arguments\n"));
-	args = create_args_struct(argc, argv);
-	(void)args;
-	return (0);
+	result = 0;
+	sign = 1;
+	if (*s == '+' || *s == '-')
+	{
+		if (*s == '-')
+			sign = -1;
+		s++;
+	}
+	while (*s >= '0' && *s <= '9')
+	{
+		digit = *s - '0';
+		if (result > (LONG_MAX - digit) / 10)
+		{
+			if (sign == 1)
+				return (LONG_MAX);
+			return (LONG_MIN);
+		}
+		result = result * 10 + digit;
+		s++;
+	}
+	return (result * sign);
 }
