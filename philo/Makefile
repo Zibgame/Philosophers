@@ -6,7 +6,7 @@
 #    By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/27 22:20:25 by zcadinot          #+#    #+#              #
-#    Updated: 2025/11/29 00:10:23 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/11/29 01:50:09 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,10 @@ SRC = main.c \
 	  struct.c \
 	  check.c \
 	  ft_atol.c \
+	  init.c \
+	  routine.c \
+	  thread.c \
 	  error.c
-
 
 OBJ = $(SRC:.c=.o)
 

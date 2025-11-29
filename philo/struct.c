@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 23:27:27 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/28 23:55:14 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/29 01:45:10 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_args	create_args_struct(int argc, char **argv)
 {
 	t_args	args;
 
-	args.number_of_philosophers = ft_atol(argv[1]);
+	args.nb_philo = ft_atol(argv[1]);
 	args.time_to_die = ft_atol(argv[2]);
 	args.time_to_eat = ft_atol(argv[3]);
 	args.time_to_sleep = ft_atol(argv[4]);
@@ -25,4 +25,21 @@ t_args	create_args_struct(int argc, char **argv)
 	else if (argc >= 5)
 		args.number_of_times_each_philosopher_must_eat = 0;
 	return (args);
+}
+
+t_simulation	init_simulation_struct(t_args args)
+{
+	t_simulation	simu;
+
+	simu.args = args;
+	simu.philos = malloc(sizeof(t_philo) * args.nb_philo);
+	if (!simu.philos)
+		return (simu);
+	simu.forks = create_forks_tab(simu);
+	if (!simu.forks)
+	{
+		free(simu.philos);
+		simu.philos = NULL;
+	}
+	return (simu);
 }
