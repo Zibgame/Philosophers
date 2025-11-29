@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/29 01:56:11 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/29 02:09:08 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # include <limits.h>
 # include <pthread.h>
+# include <sys/time.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -32,6 +33,8 @@ typedef struct s_args
 	long	number_of_times_each_philosopher_must_eat;
 }	t_args;
 
+typedef struct s_simulation	t_simulation;
+
 typedef struct s_philo
 {
 	long			id;
@@ -39,6 +42,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
+	t_simulation	*simu;
 }	t_philo;
 
 typedef struct s_simulation
@@ -61,10 +65,12 @@ void			start_threads(t_simulation *simu);
 void			join_threads(t_simulation *simu);
 pthread_mutex_t	*create_forks_tab(t_simulation simu);
 void			*routine(void *arg);
+void			monitor(t_simulation *simu);
 
 /* == Utils == */
 
 long			ft_atol(char *s);
+long			get_time(void);
 int				print_error(char *msg);
 
 #endif

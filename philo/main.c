@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:20:00 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/29 01:53:20 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/11/29 02:04:34 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		return (print_error("Fatal malloc error\n"));
 	init_philos(&simu);
 	start_threads(&simu);
+	monitor(&simu);
 	join_threads(&simu);
 	return (0);
 }
