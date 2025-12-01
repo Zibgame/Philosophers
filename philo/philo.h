@@ -6,14 +6,12 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 09:58:31 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:20:51 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
-
-/* == Includes == */
 
 # include <limits.h>
 # include <pthread.h>
@@ -21,8 +19,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <sys/time.h>
-
-/* == Structures == */
 
 typedef struct s_args
 {
@@ -33,29 +29,30 @@ typedef struct s_args
 	long	number_of_times_each_philosopher_must_eat;
 }	t_args;
 
+typedef struct s_simulation	t_simulation;
+
 typedef struct s_philo
 {
 	long			id;
 	long			last_meal;
+	long			meals;
 	pthread_t		thread;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
-	pthread_mutex_t meal_lock;
-
-	struct s_simulation		*simu;
+	t_simulation	*simu;
 }	t_philo;
 
-typedef struct s_simulation
+struct s_simulation
 {
-	long				start_time;
+	long			start_time;
 	t_args			args;
 	t_philo			*philos;
-	pthread_t monitor_thread;
+	pthread_t		monitor_thread;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print_lock;
-	pthread_mutex_t meal_lock;
-	int	stop_simulation;
-}	t_simulation;
+	pthread_mutex_t	meal_lock;
+	int				stop_simulation;
+};
 
 /* == Parsing == */
 
@@ -72,7 +69,7 @@ pthread_mutex_t	*create_forks_tab(t_simulation simu);
 void			*routine(void *arg);
 void			*monitor(void *arg);
 
-/* = action =*/
+/* == Action == */
 
 int				take_forks(t_philo *p);
 int				drop_forks(t_philo *p);

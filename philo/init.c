@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:24:57 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 10:00:40 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:15:38 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	init_philos(t_simulation *simu)
 			% simu->args.nb_philo];
 		simu->philos[i].simu = simu;
 		simu->philos[i].last_meal = simu->start_time;
+		simu->philos[i].meals = 0;
 		i++;
 	}
 }

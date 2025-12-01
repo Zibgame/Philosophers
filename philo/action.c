@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42lehavre.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 07:59:25 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 09:55:38 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:15:53 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	philo_eat(t_philo *p)
 {
 	pthread_mutex_lock(&p->simu->meal_lock);
 	p->last_meal = get_timestamp();
+	p->meals++;
 	pthread_mutex_unlock(&p->simu->meal_lock);
 	print_status(p, "is eating\n");
 	smart_sleep(p->simu->args.time_to_eat);
