@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:24:57 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 08:17:25 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:00:40 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ void	init_philos(t_simulation *simu)
 	i = 0;
 	while (i < simu->args.nb_philo)
 	{
-		simu->philos[i].id = i;
+		simu->philos[i].id = i + 1;
 		simu->philos[i].left_fork = &simu->forks[i];
 		simu->philos[i].right_fork = &simu->forks[(i + 1)
 			% simu->args.nb_philo];
 		simu->philos[i].simu = simu;
+		simu->philos[i].last_meal = simu->start_time;
 		i++;
 	}
 }

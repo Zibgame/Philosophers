@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 23:27:27 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/29 01:45:10 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 09:20:27 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ t_simulation	init_simulation_struct(t_args args)
 		free(simu.philos);
 		simu.philos = NULL;
 	}
+	simu.start_time = get_timestamp();
+	simu.stop_simulation = 0;
+	pthread_mutex_init(&simu.print_lock, NULL);
 	return (simu);
 }

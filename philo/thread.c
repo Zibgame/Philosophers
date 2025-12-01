@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 01:49:15 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/29 01:52:42 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 09:26:54 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	start_threads(t_simulation *simu)
 			routine, &simu->philos[i]);
 		i++;
 	}
+	pthread_create(&simu->monitor_thread, NULL, monitor, simu);
 }
 
 void	join_threads(t_simulation *simu)
@@ -35,4 +36,5 @@ void	join_threads(t_simulation *simu)
 		pthread_join(simu->philos[i].thread, NULL);
 		i++;
 	}
+	pthread_join(simu->monitor_thread, NULL);
 }
