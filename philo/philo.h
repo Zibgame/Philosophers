@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 08:16:07 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 08:24:39 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ void			*routine(void *arg);
 /* = action =*/
 
 int				take_forks(t_philo *p);
+int				drop_forks(t_philo *p);
+int				philo_sleep(t_philo *p);
+int				philo_think(t_philo *p);
 
 /* == Utils == */
 
