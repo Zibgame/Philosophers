@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/11/29 01:56:11 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 08:16:07 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
+	struct s_simulation		*simu;
 }	t_philo;
 
 typedef struct s_simulation
@@ -61,6 +62,10 @@ void			start_threads(t_simulation *simu);
 void			join_threads(t_simulation *simu);
 pthread_mutex_t	*create_forks_tab(t_simulation simu);
 void			*routine(void *arg);
+
+/* = action =*/
+
+int				take_forks(t_philo *p);
 
 /* == Utils == */
 

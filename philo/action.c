@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine.c                                          :+:      :+:    :+:   */
+/*   action.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: zcadinot <zcadinot@student.42lehavre.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 01:34:01 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 08:18:46 by zcadinot         ###   ########.fr       */
+/*   Created: 2025/12/01 07:59:25 by zcadinot          #+#    #+#             */
+/*   Updated: 2025/12/01 08:09:55 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	*routine(void *arg)
+int	take_forks(t_philo *p)
 {
-	t_philo	*p;
-
-	p = (t_philo *)arg;
-	take_forks(p);
-	usleep(p->simu->args.time_to_eat * 1000);
-	/* printf("Philo %ld started\n", p->id); */
-	return (NULL);
+	if (pthread_mutex_lock(p->left_fork) != 0)
+	{
+		return (0);
+	}
+	printf("has taken a fork\n");
+	if (pthread_mutex_lock(p->right_fork) != 0)
+	{
+		return (0);
+	}
+	printf("has taken a fork\n");
+	return (1);
 }
