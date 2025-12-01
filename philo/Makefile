@@ -6,7 +6,7 @@
 #    By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/27 22:20:25 by zcadinot          #+#    #+#              #
-#    Updated: 2025/12/01 08:55:31 by zcadinot         ###   ########.fr        #
+#    Updated: 2025/12/01 10:30:29 by zcadinot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = main.c \
 	  time.c \
 		utils.c \
 		monitor.c \
+		cleanup.c \
 	  error.c
 
 OBJ = $(SRC:.c=.o)

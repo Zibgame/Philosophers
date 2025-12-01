@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:20:00 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 09:26:02 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:30:11 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int	main(int argc, char **argv)
 	init_philos(&simu);
 	start_threads(&simu);
 	join_threads(&simu);
+	clean_simulation(&simu);
 	return (0);
 }

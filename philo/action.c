@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42lehavre.      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 07:59:25 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 10:15:53 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:31:26 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	drop_forks(t_philo *p)
 {
 	pthread_mutex_unlock(p->left_fork);
 	pthread_mutex_unlock(p->right_fork);
-	print_status(p, "has dropped forks\n");
 	return (1);
 }
 

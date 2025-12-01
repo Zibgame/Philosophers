@@ -6,7 +6,7 @@
 /*   By: zcadinot <zcadinot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 22:23:32 by zcadinot          #+#    #+#             */
-/*   Updated: 2025/12/01 10:20:51 by zcadinot         ###   ########.fr       */
+/*   Updated: 2025/12/01 10:30:39 by zcadinot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,6 @@ long			get_timestamp(void);
 int				print_error(char *msg);
 void			print_status(t_philo *p, char *msg);
 void			smart_sleep(long time);
+void			clean_simulation(t_simulation *simu);
 
 #endif
